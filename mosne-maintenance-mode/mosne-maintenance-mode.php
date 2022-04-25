@@ -33,7 +33,7 @@ function m_is_maintenance_mode(){
 */
 
 function m_is_maintenance_mode_loggedin(){
-	if(m_is_maintenance_mode() && is_user_logged_in()) {
+	if(m_is_maintenance_mode() && current_user_can('administrator')) {
 		return true;
 	}else{
 		return false;
