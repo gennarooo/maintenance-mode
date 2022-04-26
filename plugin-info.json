@@ -1,0 +1,7 @@
+{
+	"mosne-maintenance-mode/mosne-maintenance-mode.php":{
+		 "version":"1.0",
+		 "slug" : "mosne-maintenance-mode",
+		 "package":"https://github.com/gennarooo/maintenance-mode/archive/refs/tags/v1.0.zip"
+	}
+}

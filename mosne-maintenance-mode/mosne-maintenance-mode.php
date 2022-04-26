@@ -2,8 +2,9 @@
 /**
  * Plugin Name:       Mosne Maintenace Mode
  * Description:       Maintenance mode for development use.
- * Version:           1.0
- * Requires at least: 2.8
+ * Version:           1.0.1
+ * Update URI:        https://github.com/gennarooo/maintenance-mode/blob/main/plugin-info.json
+ * Requires at least: 5.8
  * Author:            mosne
  * Author URI:        https://mosne.it
  * License:           GPL v2 or later
@@ -91,4 +92,34 @@ function m_add_maintenance_mode_checkbox(){
 	</fieldset>';
 }
 
+/**
+ *  Check for Updates
+ */
+if( ! function_exists( 'mosne_maintenance_mode_check_for_updates' ) ){
+    
+	function mosne_maintenance_mode_check_for_updates( $update, $plugin_data, $plugin_file ){
+		 
+		 static $response = false;
+		 
+		 if( empty( $plugin_data['UpdateURI'] ) || ! empty( $update ) )
+			  return $update;
+		 
+		 if( $response === false )
+			  $response = wp_remote_get( $plugin_data['UpdateURI'] );
+		 
+		 if( empty( $response['body'] ) )
+			  return $update;
+		 
+		 $custom_plugins_data = json_decode( $response['body'], true );
+		 
+		 if( ! empty( $custom_plugins_data[ $plugin_file ] ) )
+			  return $custom_plugins_data[ $plugin_file ];
+		 else
+			  return $update;
+		 
+	}
+	
+	add_filter('update_plugins_github.com', 'mosne_maintenance_mode_check_for_updates', 10, 3);
+	
+}
 ?>
