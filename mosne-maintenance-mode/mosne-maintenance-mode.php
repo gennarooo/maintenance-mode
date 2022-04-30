@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Mosne Maintenace Mode
  * Description:       Maintenance mode for development use.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Update URI:        https://github.com/gennarooo/maintenance-mode/blob/main/plugin-info.json
  * Requires at least: 5.8
  * Author:            mosne
@@ -86,9 +86,9 @@ add_action('admin_init', function(){
  */
 
 function m_add_maintenance_mode_checkbox(){
-	echo '<fieldset><legend class="screen-reader-text"><span>'.__('Mosne maintenance mode', 'mosne').'</span></legend>
-	<label for="m_maintenance_mode"><input name="m_maintenance_mode" type="checkbox" id="m_maintenance_mode" value="1" '.checked(get_option('m_maintenance_mode'), 1, false).'/>'.__('Turn on the maintenace mode', 'mosne').'</label>
-	<p class="description">'.__('If checked add the "m-maintenance-mode" class to body.<br>The function m_is_maintenance_mode() check if true/false', 'mosne').'</p>
+	echo '<fieldset><legend class="screen-reader-text"><span>'.__('Mosne maintenance mode', 'mosne-maintenance-mode').'</span></legend>
+	<label for="m_maintenance_mode"><input name="m_maintenance_mode" type="checkbox" id="m_maintenance_mode" value="1" '.checked(get_option('m_maintenance_mode'), 1, false).'/>'.__('Turn on the maintenace mode', 'mosne-maintenance-mode').'</label>
+	<p class="description">'.__('If checked add the "m-maintenance-mode" class to body.<br>The function m_is_maintenance_mode() check if true/false', 'mosne-maintenance-mode').'</p>
 	</fieldset>';
 }
 
