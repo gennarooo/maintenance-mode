@@ -3,7 +3,7 @@
  * Plugin Name:       Mosne Maintenace Mode
  * Description:       Maintenance mode for development use.
  * Version:           1.0.2
- * Update URI:        https://github.com/gennarooo/maintenance-mode/blob/main/plugin-info.json
+ * Update URI:        https://raw.githubusercontent.com/gennarooo/plugins-updates/master/plugins-info.json
  * Requires at least: 5.8
  * Author:            mosne
  * Author URI:        https://mosne.it
